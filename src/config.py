@@ -1,0 +1,1 @@
+RULES = "data/rules.json"
