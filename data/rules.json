@@ -1,0 +1,13 @@
+{
+    "assets": "sprites/forest/",
+    "patterns": [
+        {
+            "uid": 1,
+            "asset": "tile_0000.png",
+            "is_left_ground": true,
+            "is_right_ground": true,
+            "is_up_ground": true,
+            "is_down_ground": true
+        }
+    ]
+}

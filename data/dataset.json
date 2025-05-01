@@ -1,0 +1,19 @@
+[
+    {
+        "grid": [
+            ["X", "O", "X"],
+            ["X", "O", "X"],
+            ["X", "O", "X"]
+        ],
+        "description": "tiny level with corridor"
+    },
+    {
+        "grid": [
+            ["X", "X", "X", "X"],
+            ["X", "O", "O", "X"],
+            ["X", "O", "O", "X"],
+            ["X", "O", "O", "X"]
+        ],
+        "description": "small dead end"
+    }
+]
