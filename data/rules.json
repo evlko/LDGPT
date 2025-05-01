@@ -1,5 +1,5 @@
 {
-    "assets": "sprites/forest/",
+    "assets": "assets/forest/",
     "patterns": [
         {
             "uid": 1,
