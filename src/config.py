@@ -1,1 +1,1 @@
-RULES = "data/rules.json"
+RULES = "data/configs/rules.json"

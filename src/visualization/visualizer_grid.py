@@ -41,7 +41,7 @@ class VisualizerGrid(Visualizer):
             self._render_cell(
                 image_path=image,
                 ax=cell_ax,
-                axis=show_borders,
+                show_axis=show_borders
             )
 
         plt.subplots_adjust(

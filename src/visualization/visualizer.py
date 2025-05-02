@@ -19,12 +19,12 @@ class Visualizer(ABC):
         self,
         image_path: str,
         ax: matplotlib.axes.Axes,
-        axis: bool = False,
+        show_axis: bool = False,
     ):
         if image_path:
             self._render_image(image_path=image_path, ax=ax)
 
-        if not axis:
+        if not show_axis:
             ax.axis("off")
 
         ax.set_xticks([])

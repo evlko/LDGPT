@@ -7,15 +7,15 @@
             "assets": [
                 {
                     "sprite": "tile_0048.png",
-                    "weight": 1
+                    "weight": 20
                 },
                 {
                     "sprite": "tile_0049.png",
-                    "weight": 1
+                    "weight": 5
                 },
                 {
                     "sprite": "tile_0042.png",
-                    "weight": 1
+                    "weight": 3
                 },
                 {
                     "sprite": "tile_0043.png",
@@ -34,7 +34,7 @@
             "assets": [
                 {
                     "sprite": "tile_0050.png",
-                    "weight": 1
+                    "weight": 10
                 },
                 {
                     "sprite": "tile_0051.png",
@@ -53,7 +53,7 @@
             "assets": [
                 {
                     "sprite": "tile_0000.png",
-                    "weight": 1
+                    "weight": 10
                 },
                 {
                     "sprite": "tile_0012.png",
@@ -76,11 +76,11 @@
             "assets": [
                 {
                     "sprite": "tile_0040.png",
-                    "weight": 1
+                    "weight": 20
                 },
                 {
                     "sprite": "tile_0014.png",
-                    "weight": 1
+                    "weight": 10
                 },
                 {
                     "sprite": "tile_0028.png",
@@ -131,7 +131,7 @@
                 }
             ],
             "mask": [
-                ["O", "X", "X"],
+                ["A", "X", "X"],
                 ["O", "X", "X"],
                 ["A", "O", "A"]
             ]
@@ -146,7 +146,7 @@
                 }
             ],
             "mask": [
-                ["X", "X", "O"],
+                ["X", "X", "A"],
                 ["X", "X", "O"],
                 ["A", "O", "A"]
             ]
@@ -214,7 +214,7 @@
             "mask": [
                 ["O", "X", "X"],
                 ["O", "X", "X"],
-                ["O", "X", "X"]
+                ["A", "X", "X"]
             ]
         },
         {
@@ -229,7 +229,120 @@
             "mask": [
                 ["X", "X", "O"],
                 ["X", "X", "O"],
-                ["X", "X", "O"]
+                ["X", "X", "A"]
+            ]
+        },
+        {
+            "uid": 11,
+            "name": "Wall | Top | Left",
+            "assets": [
+                {
+                    "sprite": "tile_0004.png",
+                    "weight": 1
+                }
+            ],
+            "mask": [
+                ["A", "O", "A"],
+                ["O", "X", "X"],
+                ["A", "X", "X"]
+            ]
+        },
+        {
+            "uid": 12,
+            "name": "Wall | Top | Center",
+            "assets": [
+                {
+                    "sprite": "tile_0026.png",
+                    "weight": 1
+                }
+            ],
+            "mask": [
+                ["A", "O", "A"],
+                ["X", "X", "X"],
+                ["X", "X", "X"]
+            ]
+        },
+        {
+            "uid": 13,
+            "name": "Wall | Top | Right",
+            "assets": [
+                {
+                    "sprite": "tile_0005.png",
+                    "weight": 1
+                }
+            ],
+            "mask": [
+                ["A", "O", "A"],
+                ["X", "X", "O"],
+                ["X", "X", "A"]
+            ]
+        },
+        {
+            "uid": 14,
+            "name": "Wall | Corner | Bottom | Left",
+            "assets": [
+                {
+                    "sprite": "tile_0003.png",
+                    "weight": 1
+                }
+            ],
+            "mask": [
+                ["A", "A", "A", "A", "A"],
+                ["A", "X", "X", "X", "A"],
+                ["A", "X", "X", "X", "A"],
+                ["A", "X", "X", "X", "A"],
+                ["A", "O", "X", "A", "A"]
+            ]
+        },
+        {
+            "uid": 15,
+            "name": "Wall | Corner | Bottom | Right",
+            "assets": [
+                {
+                    "sprite": "tile_0001.png",
+                    "weight": 1
+                }
+            ],
+            "mask": [
+                ["A", "A", "A", "A", "A"],
+                ["A", "X", "X", "X", "A"],
+                ["A", "X", "X", "X", "A"],
+                ["A", "X", "X", "X", "A"],
+                ["A", "A", "X", "O", "A"]
+            ]
+        },
+        {
+            "uid": 16,
+            "name": "Wall | Corner | Top | Left",
+            "assets": [
+                {
+                    "sprite": "tile_0027.png",
+                    "weight": 1
+                }
+            ],
+            "mask": [
+                ["A", "A", "A", "A", "A"],
+                ["A", "O", "X", "X", "A"],
+                ["A", "X", "X", "X", "A"],
+                ["A", "X", "X", "X", "A"],
+                ["A", "A", "X", "A", "A"]
+            ]
+        },
+        {
+            "uid": 17,
+            "name": "Wall | Corner | Top | Right",
+            "assets": [
+                {
+                    "sprite": "tile_0025.png",
+                    "weight": 1
+                }
+            ],
+            "mask": [
+                ["A", "A", "A", "A", "A"],
+                ["A", "X", "X", "O", "A"],
+                ["A", "X", "X", "X", "A"],
+                ["A", "X", "X", "X", "A"],
+                ["A", "A", "X", "A", "A"]
             ]
         }
     ]
