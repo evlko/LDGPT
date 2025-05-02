@@ -72,7 +72,7 @@
         },
         {
             "uid": 3,
-            "name": "Wall | Bottom | Center",
+            "name": "Wall | Bottom | Bottom | Center",
             "assets": [
                 {
                     "sprite": "tile_0040.png",
@@ -123,7 +123,7 @@
         },
         {
             "uid": 4,
-            "name": "Wall | Bottom | Left",
+            "name": "Wall | Bottom | Bottom | Left",
             "assets": [
                 {
                     "sprite": "tile_0057.png",
@@ -138,7 +138,7 @@
         },
         {
             "uid": 5,
-            "name": "Wall | Bottom | Right",
+            "name": "Wall | Bottom | Bottom | Right",
             "assets": [
                 {
                     "sprite": "tile_0059.png",
@@ -149,6 +149,87 @@
                 ["X", "X", "O"],
                 ["X", "X", "O"],
                 ["A", "O", "A"]
+            ]
+        },
+        {
+            "uid": 6,
+            "name": "Wall | Bottom | Top | Center",
+            "assets": [
+                {
+                    "sprite": "tile_0002.png",
+                    "weight": 1
+                }
+            ],
+            "mask": [
+                ["A", "A", "A", "A", "A"],
+                ["A", "X", "X", "X", "A"],
+                ["A", "X", "X", "X", "A"],
+                ["A", "X", "X", "X", "A"],
+                ["A", "A", "O", "A", "A"]
+            ]
+        },
+        {
+            "uid": 7,
+            "name": "Wall | Bottom | Top | Left",
+            "assets": [
+                {
+                    "sprite": "tile_0016.png",
+                    "weight": 1
+                }
+            ],
+            "mask": [
+                ["A", "A", "A", "A", "A"],
+                ["A", "A", "X", "X", "A"],
+                ["A", "A", "X", "X", "A"],
+                ["A", "O", "X", "X", "A"],
+                ["A", "A", "O", "A", "A"]
+            ]
+        },
+        {
+            "uid": 8,
+            "name": "Wall | Bottom | Top | Right",
+            "assets": [
+                {
+                    "sprite": "tile_0017.png",
+                    "weight": 1
+                }
+            ],
+            "mask": [
+                ["A", "A", "A", "A", "A"],
+                ["A", "X", "X", "A", "A"],
+                ["A", "X", "X", "A", "A"],
+                ["A", "X", "X", "O", "A"],
+                ["A", "A", "O", "A", "A"]
+            ]
+        },
+        {
+            "uid": 9,
+            "name": "Wall | Left",
+            "assets": [
+                {
+                    "sprite": "tile_0015.png",
+                    "weight": 1
+                }
+            ],
+            "mask": [
+                ["O", "X", "X"],
+                ["O", "X", "X"],
+                ["O", "X", "X"]
+            ]
+        },
+        {
+            "uid": 10,
+            "name": "Wall | Right",
+            "assets": [
+                {
+                    "sprite": "tile_0013.png",
+                    "weight": 1
+                }
+            ],
+            "mask": [
+                ["X", "X", "O"],
+                ["X", "X", "O"],
+                ["X", "X", "O"]
             ]
         }
     ]
