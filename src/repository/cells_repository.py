@@ -6,11 +6,11 @@ from src.dataclasses.mask import Mask
 from src.utils.weighted_choice import weighted_choice
 
 
-class Repository:
+class CellsRepository:
     def __init__(self) -> None:
         self.cells: list[Cell] = []
 
-    def register_patterns(self, path: str):
+    def register_cells(self, path: str):
         with open(path, "r") as file:
             data = json.load(file)
 
@@ -44,4 +44,4 @@ class Repository:
         return weighted_choice(objects=assets)
 
 
-repository = Repository()
+cells_repository = CellsRepository()

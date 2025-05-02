@@ -17,15 +17,14 @@ class Grid:
     @property
     def height(self) -> int:
         return len(self.grid)
-    
+
     @classmethod
     def from_height_map(cls, hmap: str) -> "Grid":
         grid = []
         with open(hmap, "r") as f:
             for line in f:
                 row = [
-                    "X" if value == "0" else "O"
-                    for value in line.strip().split(",")
+                    "X" if value == "0" else "O" for value in line.strip().split(",")
                 ]
                 grid.append(row)
         return cls(grid=grid)

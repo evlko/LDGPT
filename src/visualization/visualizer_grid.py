@@ -4,7 +4,7 @@ from src.dataclasses.grid import Grid
 from src.dataclasses.mask import Mask
 from src.dataclasses.point import Point
 from src.dataclasses.rect import Rect
-from src.repository.repository import Repository
+from src.repository.cells_repository import CellsRepository
 from src.visualization.visualizer import Visualizer
 
 OFFSET = 0.15
@@ -14,7 +14,7 @@ class VisualizerGrid(Visualizer):
     def draw(
         self,
         grid: Grid,
-        repository: Repository,
+        repository: CellsRepository,
         title: str = None,
         show_borders: bool = False,
         save_path: str | None = None,
@@ -38,11 +38,7 @@ class VisualizerGrid(Visualizer):
             asset = repository.get_asset_by_mask(mask=mask)
             image = asset.sprite
 
-            self._render_cell(
-                image_path=image,
-                ax=cell_ax,
-                show_axis=show_borders
-            )
+            self._render_cell(image_path=image, ax=cell_ax, show_axis=show_borders)
 
         plt.subplots_adjust(
             left=OFFSET,
