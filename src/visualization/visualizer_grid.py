@@ -1,6 +1,8 @@
 from matplotlib import pyplot as plt
 
 from src.dataclass.grid import Grid
+from src.dataclass.mask import Mask
+from src.dataclass.point import Point
 from src.repository.repository import Repository
 from src.visualization.visualizer import Visualizer
 
@@ -29,7 +31,9 @@ class VisualizerGrid(Visualizer):
         for x, y in grid.cells():
             cell_ax = ax[x, y]
 
-            image = repository.patterns[0].asset
+            mask = Mask(pattern=grid.get_cells_around_point(Point(x=x, y=y)))
+            cell = repository.get_cell_by_mask(mask=mask)
+            image = cell.asset
 
             self._render_cell(
                 image_path=image,

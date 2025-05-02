@@ -1,47 +1,39 @@
 import json
+import random
 
-from src.dataclass.pattern import Pattern
+from src.dataclass.cell import Cell
+from src.dataclass.mask import Mask
 
 
 class Repository:
     def __init__(self) -> None:
-        self.patterns: list[Pattern] = []
+        self.cells: list[Cell] = []
 
     def register_patterns(self, path: str):
         with open(path, "r") as file:
             data = json.load(file)
 
         aseets_path = data["assets"]
-        patterns = data["patterns"]
+        cells = data["cells"]
 
-        self.patterns = [
-            Pattern(
-                uid=pattern["uid"],
-                asset=f"{aseets_path}{pattern['asset']}",
-                is_left_ground=pattern["is_left_ground"],
-                is_right_ground=pattern["is_right_ground"],
-                is_up_ground=pattern["is_up_ground"],
-                is_down_ground=pattern["is_down_ground"],
+        self.cells = [
+            Cell(
+                uid=cell["uid"],
+                asset=f"{aseets_path}{cell['asset']}",
+                mask=Mask(pattern=cell["mask"]),
             )
-            for pattern in patterns
+            for cell in cells
         ]
 
-    def get_pattern_by_neighbours(
+    def get_cell_by_mask(
         self,
-        is_left_ground: bool,
-        is_right_ground: bool,
-        is_up_ground: bool,
-        is_down_ground: bool,
-    ) -> Pattern | None:
-        for pattern in self.patterns:
-            if (
-                pattern.is_left_ground == is_left_ground
-                and pattern.is_right_ground == is_right_ground
-                and pattern.is_up_ground == is_up_ground
-                and pattern.is_down_ground == is_down_ground
-            ):
-                return pattern
-        return None
+        mask: Mask
+    ) -> Cell | None:
+        acceptable = []
+        for cell in self.cells:
+            if cell.mask == mask:
+                acceptable.append(cell)
+        return random.choice(acceptable)
 
 
 repository = Repository()
