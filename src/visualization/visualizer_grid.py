@@ -1,8 +1,8 @@
 from matplotlib import pyplot as plt
 
-from src.dataclass.grid import Grid
-from src.dataclass.mask import Mask
-from src.dataclass.point import Point
+from src.dataclasses.grid import Grid
+from src.dataclasses.mask import Mask
+from src.dataclasses.point import Point
 from src.repository.repository import Repository
 from src.visualization.visualizer import Visualizer
 

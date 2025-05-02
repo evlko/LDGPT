@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from src.enum.cell import CellType
+from src.enums.cell import CellType
 
 IGNORE_SYMBOLS = {CellType.SELF, CellType.ANY, None}
 

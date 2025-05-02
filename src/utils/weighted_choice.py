@@ -1,6 +1,6 @@
 import numpy as np
 
-from src.dataclass.w_obj import WeightedObject
+from src.dataclasses.w_obj import WeightedObject
 
 
 def weighted_choice(objects: list[WeightedObject], seed: int = None) -> WeightedObject:

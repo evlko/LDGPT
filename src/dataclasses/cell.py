@@ -1,7 +1,7 @@
 from dataclasses import dataclass, field
 
-from src.dataclass.mask import Mask
-from src.dataclass.w_obj import WeightedObject
+from src.dataclasses.mask import Mask
+from src.dataclasses.w_obj import WeightedObject
 
 
 @dataclass(unsafe_hash=True)

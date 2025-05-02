@@ -1,7 +1,7 @@
 import json
 
-from src.dataclass.cell import Asset, Cell
-from src.dataclass.mask import Mask
+from src.dataclasses.cell import Asset, Cell
+from src.dataclasses.mask import Mask
 from src.utils.weighted_choice import weighted_choice
 
 

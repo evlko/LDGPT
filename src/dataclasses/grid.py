@@ -2,8 +2,8 @@ from dataclasses import dataclass
 
 import numpy as np
 
-from src.dataclass.point import Point
-from src.dataclass.rect import Rect
+from src.dataclasses.point import Point
+from src.dataclasses.rect import Rect
 
 
 @dataclass
