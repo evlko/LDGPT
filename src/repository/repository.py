@@ -1,4 +1,5 @@
 import json
+from collections import defaultdict
 
 from src.dataclasses.cell import Asset, Cell
 from src.dataclasses.mask import Mask
@@ -32,10 +33,14 @@ class Repository:
         ]
 
     def get_asset_by_mask(self, mask: Mask) -> Cell | None:
-        assets = []
+        assets = defaultdict(list)
         for cell in self.cells:
-            if cell.mask == mask:
-                assets.extend(cell.assets)
+            lookup_mask = mask
+            if len(cell) < len(mask):
+                lookup_mask = mask.cut_to_other(other=cell.mask)
+            if cell.mask == lookup_mask:
+                assets[len(cell)].extend(cell.assets)
+        assets = assets[max(assets.keys())]
         return weighted_choice(objects=assets)
 
 

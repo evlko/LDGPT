@@ -14,3 +14,6 @@ class Cell:
     uid: int
     mask: Mask
     assets: list[Asset] = field(default_factory=list, repr=False)
+
+    def __len__(self) -> int:
+        return len(self.mask)

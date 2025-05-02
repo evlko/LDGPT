@@ -3,6 +3,7 @@ from matplotlib import pyplot as plt
 from src.dataclasses.grid import Grid
 from src.dataclasses.mask import Mask
 from src.dataclasses.point import Point
+from src.dataclasses.rect import Rect
 from src.repository.repository import Repository
 from src.visualization.visualizer import Visualizer
 
@@ -25,6 +26,7 @@ class VisualizerGrid(Visualizer):
             ncols,
             figsize=(ncols, nrows),
         )
+        view = Rect(width=5, height=5)
 
         if title:
             fig.suptitle(title)
@@ -32,7 +34,7 @@ class VisualizerGrid(Visualizer):
         for x, y in grid.cells():
             cell_ax = ax[x, y]
 
-            mask = Mask(pattern=grid.get_cells_around_point(Point(x=x, y=y)))
+            mask = Mask(pattern=grid.get_cells_around_point(Point(x=x, y=y), view=view))
             asset = repository.get_asset_by_mask(mask=mask)
             image = asset.sprite
 
