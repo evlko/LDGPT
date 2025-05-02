@@ -1,8 +1,8 @@
 import json
-import random
 
-from src.dataclass.cell import Cell
+from src.dataclass.cell import Asset, Cell
 from src.dataclass.mask import Mask
+from src.utils.weighted_choice import weighted_choice
 
 
 class Repository:
@@ -19,21 +19,24 @@ class Repository:
         self.cells = [
             Cell(
                 uid=cell["uid"],
-                asset=f"{aseets_path}{cell['asset']}",
                 mask=Mask(pattern=cell["mask"]),
+                assets=[
+                    Asset(
+                        sprite=f"{aseets_path}{asset["sprite"]}",
+                        weight=asset["weight"],
+                    )
+                    for asset in cell["assets"]
+                ],
             )
             for cell in cells
         ]
 
-    def get_cell_by_mask(
-        self,
-        mask: Mask
-    ) -> Cell | None:
-        acceptable = []
+    def get_asset_by_mask(self, mask: Mask) -> Cell | None:
+        assets = []
         for cell in self.cells:
             if cell.mask == mask:
-                acceptable.append(cell)
-        return random.choice(acceptable)
+                assets.extend(cell.assets)
+        return weighted_choice(objects=assets)
 
 
 repository = Repository()

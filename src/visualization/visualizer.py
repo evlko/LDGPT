@@ -13,7 +13,7 @@ class Visualizer(ABC):
         """Load an image and display it in the given axis grid position."""
         if image_path:
             img = mpimg.imread(image_path)
-            ax.imshow(img)    
+            ax.imshow(img)
 
     def _render_cell(
         self,

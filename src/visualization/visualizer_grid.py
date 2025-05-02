@@ -21,7 +21,8 @@ class VisualizerGrid(Visualizer):
     ):
         nrows, ncols = grid.height, grid.width
         fig, ax = plt.subplots(
-            nrows, ncols,
+            nrows,
+            ncols,
             figsize=(ncols, nrows),
         )
 
@@ -32,8 +33,8 @@ class VisualizerGrid(Visualizer):
             cell_ax = ax[x, y]
 
             mask = Mask(pattern=grid.get_cells_around_point(Point(x=x, y=y)))
-            cell = repository.get_cell_by_mask(mask=mask)
-            image = cell.asset
+            asset = repository.get_asset_by_mask(mask=mask)
+            image = asset.sprite
 
             self._render_cell(
                 image_path=image,
@@ -45,7 +46,7 @@ class VisualizerGrid(Visualizer):
             left=OFFSET,
             right=1 - OFFSET,
             bottom=OFFSET,
-            top=1-OFFSET,
+            top=1 - OFFSET,
             hspace=0,
             wspace=0,
         )
