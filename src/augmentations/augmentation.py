@@ -39,11 +39,36 @@ class HorizontalShiftAugmentation(Augmentation):
         return datap
 
 
+class ReverseHorizontalShiftAugmentation(HorizontalShiftAugmentation):
+    @staticmethod
+    def augment(datap: DataPoint, param: int) -> DataPoint:
+        return HorizontalShiftAugmentation.augment(datap=datap, param=-param)
+
+
 class VerticalShiftAugmentation(Augmentation):
     @staticmethod
     def augment(datap: DataPoint, param: int) -> DataPoint:
         datap.level = np.roll(datap.level, shift=param, axis=0)
         return datap
+
+
+class ReverseVerticalShiftAugmentation(VerticalShiftAugmentation):
+    @staticmethod
+    def augment(datap: DataPoint, param: int) -> DataPoint:
+        return VerticalShiftAugmentation.augment(datap=datap, param=-param)
+
+
+class DiagonalShiftAugmentation(Augmentation):
+    @staticmethod
+    def augment(datap: DataPoint, param: int) -> DataPoint:
+        intermediate = VerticalShiftAugmentation.augment(datap=datap, param=param)
+        return HorizontalShiftAugmentation.augment(datap=intermediate, param=param)
+
+
+class ReverseDiagonalShiftAugmentation(DiagonalShiftAugmentation):
+    @staticmethod
+    def augment(datap: DataPoint, param: int) -> DataPoint:
+        return DiagonalShiftAugmentation.augment(datap=datap, param=-param)
 
 
 class DualFlipAugmentation(Augmentation):
@@ -114,6 +139,19 @@ class TranslationAugmentation(Augmentation):
             datap.label = roundtrip
         except Exception as e:
             print(f"[TranslationAugmentation] Failed: {e}")
+        return datap
+
+
+class DensityInjectionAugmentation(Augmentation):
+    @staticmethod
+    def augment(datap: DataPoint, param: None = None) -> DataPoint:
+        num_walls = np.sum(datap.level == "X")
+        total = datap.level.size
+        density = num_walls / total
+        if density > 0.5:
+            datap.label = "dense " + datap.label
+        elif density < 0.2:
+            datap.label = "sparse " + datap.label
         return datap
 
 
