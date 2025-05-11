@@ -29,9 +29,7 @@
             ["X", "O", "X"],
             ["X", "O", "X"]
         ],
-        "label": [
-            "tiny arena with corridor"
-        ],
+        "label": "tiny arena with corridor",
         "augmentations": [
             "rotate-1",
             "fill-1"

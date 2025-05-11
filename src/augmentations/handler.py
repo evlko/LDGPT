@@ -2,10 +2,13 @@ import copy
 
 import numpy as np
 
-from src.augmentations.augmentation import (ClipAugmentation, FillAugmentation,
+from src.augmentations.augmentation import (ClipAugmentation,
+                                            DualFlipAugmentation,
+                                            FillAugmentation,
                                             HorizontalFlipAugmentation,
                                             HorizontalShiftAugmentation,
                                             RotateAugmentation,
+                                            ShuffleLabelAugmentation,
                                             SynonymAugmentation,
                                             TranslationAugmentation,
                                             VerticalFlipAugmentation,
@@ -20,10 +23,12 @@ class AugmentationHandler:
         "translation": TranslationAugmentation,
         "vertical_flip": VerticalFlipAugmentation,
         "horizontal_flip": HorizontalFlipAugmentation,
+        "dual_flip": DualFlipAugmentation,
         "horizontal_shift": HorizontalShiftAugmentation,
         "vertical_shift": VerticalShiftAugmentation,
         "rotate": RotateAugmentation,
         "syn": SynonymAugmentation,
+        "shuffle": ShuffleLabelAugmentation,
     }
 
     def handle(augmentation: str, datap: DataPoint, param: int | None = None):

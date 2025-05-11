@@ -46,6 +46,13 @@ class VerticalShiftAugmentation(Augmentation):
         return datap
 
 
+class DualFlipAugmentation(Augmentation):
+    @staticmethod
+    def augment(datap: DataPoint, param: int | None = None) -> DataPoint:
+        datap.level = np.flipud(np.fliplr(datap.level))
+        return datap
+
+
 class ClipAugmentation(Augmentation):
     @staticmethod
     def augment(datap: DataPoint, param: int) -> np.ndarray:
@@ -80,6 +87,16 @@ class RotateAugmentation(Augmentation):
 
         rotated = np.rot90(datap.level, k=-param)
         datap.level = rotated
+        return datap
+
+
+class ShuffleLabelAugmentation(Augmentation):
+    @staticmethod
+    def augment(datap: DataPoint, param: int | None = None) -> DataPoint:
+        """Shuffle the words in the label"""
+        words = datap.label.split()
+        random.shuffle(words)
+        datap.label = " ".join(words)
         return datap
 
 

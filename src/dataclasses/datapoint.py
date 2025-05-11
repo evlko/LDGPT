@@ -11,7 +11,7 @@ class DataPoint:
     @property
     def text(self):
         return (
-            f"<|label|> {self.label} <|level|>\n"
+            f"<|label|> {self.label.lower()} <|level|>\n"
             + "\n".join("".join(row) for row in self.level)
             + "\n"
         )
