@@ -1,0 +1,10 @@
+[
+    {
+        "level": "XOX\nXOX\nXOX",
+        "label": "tiny level with corridor"
+    },
+    {
+        "level": "XXXX\nXOOX\nXOOX\nXOOX",
+        "label": "small dead end"
+    }
+]

@@ -163,3 +163,6 @@ cython_debug/
 
 .DS_Store
 /.vscode
+data/dataset/*.txt
+/checkpoints
+/mlruns
