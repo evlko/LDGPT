@@ -28,6 +28,13 @@ class Grid:
                 ]
                 grid.append(row)
         return cls(grid=grid)
+    
+    def add_ground_border(self):
+        width = self.width
+        self.grid = [["O"] + row + ["O"] for row in self.grid]
+        new_row = ["O"] * (width + 2)
+        self.grid.insert(0, new_row)
+        self.grid.append(new_row.copy())
 
     def cells(self):
         for x in range(self.height):
