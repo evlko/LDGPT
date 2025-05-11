@@ -7,10 +7,11 @@
         ],
         "label": "tiny empty level",
         "augmentations": [
-            "syn",
+            "syn-2",
             "clip-1",
             "fill-1",
-            "translation"
+            "translation",
+            "shuffle"
         ]
     },
     {
@@ -21,18 +22,126 @@
             ["O", "O", "O", "O", "O"],
             ["O", "O", "O", "O", "O"]
         ],
-        "label": "medium empty level"
+        "label": "medium empty level",
+        "augmentations": [
+            "syn-2",
+            "fill-1",
+            "shuffle"
+        ]
     },
     {
         "level": [
-            ["X", "O", "X"],
-            ["X", "O", "X"],
-            ["X", "O", "X"]
+            ["O", "O", "O", "O", "O", "O", "O", "O", "O", "O"],
+            ["O", "O", "O", "O", "O", "O", "O", "O", "O", "O"],
+            ["O", "O", "O", "O", "O", "O", "O", "O", "O", "O"],
+            ["O", "O", "O", "O", "O", "O", "O", "O", "O", "O"],
+            ["O", "O", "O", "O", "O", "O", "O", "O", "O", "O"],
+            ["O", "O", "O", "O", "O", "O", "O", "O", "O", "O"],
+            ["O", "O", "O", "O", "O", "O", "O", "O", "O", "O"],
+            ["O", "O", "O", "O", "O", "O", "O", "O", "O", "O"],
+            ["O", "O", "O", "O", "O", "O", "O", "O", "O", "O"],
+            ["O", "O", "O", "O", "O", "O", "O", "O", "O", "O"]
         ],
-        "label": "tiny arena with corridor",
+        "label": "large empty level",
+        "augmentations": [
+            "syn-2",
+            "fill-1",
+            "shuffle"
+        ]
+    },
+    {
+        "level": [
+            ["O", "O", "O", "O", "O"],
+            ["O", "X", "X", "X", "O"],
+            ["O", "X", "X", "X", "O"],
+            ["O", "X", "X", "X", "O"],
+            ["O", "O", "O", "O", "O"]
+        ],
+        "label": "level with a tower in the center",
+        "augmentations": [
+            "syn-2",
+            "fill-3"
+        ]
+    },
+    {
+        "level": [
+            ["O", "O", "O", "O", "O", "O", "O", "O", "O"],
+            ["O", "X", "X", "X", "O", "O", "X", "X", "X"],
+            ["O", "X", "X", "X", "O", "O", "X", "X", "X"],
+            ["O", "X", "X", "X", "O", "O", "X", "X", "X"],
+            ["O", "X", "X", "X", "O", "O", "X", "X", "X"],
+            ["O", "O", "O", "O", "O", "O", "O", "O", "O"],
+            ["O", "O", "O", "O", "O", "O", "O", "O", "O"]
+        ],
+        "label": "wide level with two towers",
+        "augmentations": [
+            "syn-2",
+            "fill-3",
+            "horizontal_flip",
+            "vertical_flip",
+            "dual_flip"
+        ]
+    },
+    {
+        "level": [
+            ["X", "X", "O", "O", "X", "X"],
+            ["X", "X", "O", "O", "X", "X"],
+            ["X", "X", "O", "O", "X", "X"],
+            ["X", "X", "O", "O", "X", "X"],
+            ["X", "X", "O", "O", "X", "X"],
+            ["X", "X", "O", "O", "X", "X"]
+        ],
+        "label": "arena with corridor",
         "augmentations": [
             "rotate-1",
-            "fill-1"
+            "fill-2",
+            "clip-1",
+            "shuffle",
+            "syn-2"
+        ]
+    },
+    {
+        "level": [
+            ["X", "X", "O", "O", "O", "O", "O", "O", "X", "X"],
+            ["X", "X", "X", "O", "O", "O", "O", "X", "X", "X"],
+            ["O", "X", "X", "X", "O", "O", "X", "X", "X", "O"],
+            ["O", "O", "X", "X", "X", "X", "X", "X", "O", "O"],
+            ["O", "O", "O", "X", "X", "X", "X", "O", "O", "O"],
+            ["O", "O", "O", "X", "X", "X", "X", "O", "O", "O"],
+            ["O", "O", "X", "X", "X", "X", "X", "X", "O", "O"],
+            ["O", "X", "X", "X", "O", "O", "X", "X", "X", "O"],
+            ["X", "X", "X", "O", "O", "O", "O", "X", "X", "X"],
+            ["X", "X", "O", "O", "O", "O", "O", "O", "X", "X"]
+        ],
+        "label": "level with X shaped wall",
+        "augmentations": [
+            "fill-1",
+            "clip-1",
+            "syn-2",
+            "translation"
+        ]
+    },
+    {
+        "level": [
+            ["O", "O", "O", "O", "O", "O", "O", "O", "O", "O"],
+            ["X", "X", "O", "O", "O", "O", "O", "O", "O", "O"],
+            ["X", "X", "O", "O", "O", "O", "O", "O", "O", "O"],
+            ["X", "X", "O", "O", "O", "O", "O", "O", "O", "O"],
+            ["X", "X", "O", "O", "O", "O", "O", "O", "O", "O"],
+            ["X", "X", "O", "O", "O", "O", "O", "O", "O", "O"],
+            ["X", "X", "O", "O", "O", "O", "O", "O", "O", "O"],
+            ["X", "X", "X", "X", "X", "X", "O", "O", "O", "O"],
+            ["X", "X", "X", "X", "X", "X", "O", "O", "O", "O"],
+            ["X", "X", "X", "X", "X", "X", "O", "O", "O", "O"]
+        ],
+        "label": "level with L shaped wall",
+        "augmentations": [
+            "fill-2",
+            "clip-1",
+            "syn-2",
+            "translation",
+            "horizontal_shift-4",
+            "reverse_vertical_shift-1"
         ]
     }
 ]

@@ -1,5 +1,7 @@
 {
     "small": ["tiny"],
-    "big": ["enormous"],
-    "level": ["arena"]
+    "big": ["enormous", "large"],
+    "level": ["arena", "room", "area"],
+    "with": ["containing"],
+    "no": ["without"]
 }
