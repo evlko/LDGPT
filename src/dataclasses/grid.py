@@ -29,7 +29,7 @@ class Grid:
                 ]
                 grid.append(row)
         return cls(grid=grid)
-    
+
     @classmethod
     def from_str(cls, s: str) -> "Grid":
         L = len(s)
@@ -40,10 +40,10 @@ class Grid:
                 break
         grid = []
         for i in range(rows):
-            row = list(s[i*cols:(i+1)*cols])
+            row = list(s[i * cols : (i + 1) * cols])
             grid.append(row)
         return cls(grid=grid)
-    
+
     def add_ground_border(self):
         width = self.width
         self.grid = [["O"] + row + ["O"] for row in self.grid]
