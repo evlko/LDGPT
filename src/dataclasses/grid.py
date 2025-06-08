@@ -1,3 +1,4 @@
+import math
 from dataclasses import dataclass
 
 import numpy as np
@@ -27,6 +28,20 @@ class Grid:
                     "X" if value == "0" else "O" for value in line.strip().split(",")
                 ]
                 grid.append(row)
+        return cls(grid=grid)
+    
+    @classmethod
+    def from_str(cls, s: str) -> "Grid":
+        L = len(s)
+        for i in range(int(math.isqrt(L)), 0, -1):
+            if L % i == 0:
+                rows = i
+                cols = L // i
+                break
+        grid = []
+        for i in range(rows):
+            row = list(s[i*cols:(i+1)*cols])
+            grid.append(row)
         return cls(grid=grid)
     
     def add_ground_border(self):
